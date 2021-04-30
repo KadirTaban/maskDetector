@@ -1,12 +1,11 @@
 import cv2
 import sys
 
-cascPath = "haarcascade/haarcascade_mask.xml"
-faceCascade = cv2.CascadeClassifier(cascPath)
+faceCascade = cv2.CascadeClassifier("haarcascade/haarcascade_mask.xml")
 
 video_capture = cv2.VideoCapture(0)
 
-while True:
+while video_capture.isOpened():
     # Capture frame-by-frame
     ret, frame = video_capture.read()
 
