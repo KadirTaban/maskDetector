@@ -1,7 +1,7 @@
 import cv2
 import sys
 
-faceCascade = cv2.CascadeClassifier("haarcascade/haarcascade_mask.xml")
+faceMaskCascade = cv2.CascadeClassifier("haarcascade/haarcascade_mask.xml")
 
 video_capture = cv2.VideoCapture(0)
 
@@ -13,7 +13,7 @@ while video_capture.isOpened():
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    faces = faceCascade.detectMultiScale(
+    faces = faceMaskCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
         minNeighbors=5,
